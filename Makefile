@@ -1,6 +1,6 @@
-GLUON_BUILD_DIR := gluon-build
-GLUON_GIT_URL := https://github.com/freifunk-gluon/gluon
-GLUON_GIT_REF := v2018.1
+GLUON_BUILD_DIR ?= gluon-build
+GLUON_GIT_URL ?= https://github.com/freifunk-gluon/gluon
+GLUON_GIT_REF ?= 2ce07ae2fe251bcf8a424dc39aba8da1df7f164d
 
 SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
@@ -8,15 +8,20 @@ GLUON_TARGETS ?= \
 	ar71xx-generic \
 	ar71xx-tiny \
 	ar71xx-nand \
+	ipq40xx \
+	ipq806x \
 	brcm2708-bcm2708 \
 	brcm2708-bcm2709 \
-	mpc85xx-generic \
+	brcm2708-bcm2710 \
+	pc85xx-generic \
+	ramips-mt7620 \
 	ramips-mt7621 \
+	ramips-mt76x8 \
 	ramips-rt305x \
 	x86-64 \
 	x86-generic \
 	x86-geode \
-	sunxi
+	sunxi-cortexa7
 
 
 GLUON_RELEASE := $(shell git describe --tags 2>/dev/null)
