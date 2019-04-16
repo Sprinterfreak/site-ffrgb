@@ -1,22 +1,31 @@
-GLUON_BUILD_DIR := gluon-build
-GLUON_GIT_URL := https://github.com/freifunk-gluon/gluon
-GLUON_GIT_REF := v2018.1
+GLUON_BUILD_DIR ?= gluon-build
+GLUON_GIT_URL ?= https://github.com/freifunk-gluon/gluon
+GLUON_GIT_REF ?= 2ce07ae2fe251bcf8a424dc39aba8da1df7f164d
+
+GLUON_DEPRECATED ?= upgrade
 
 SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
 GLUON_TARGETS ?= \
 	ar71xx-generic \
-	ar71xx-tiny \
+	ar71xx-mikrotik \
 	ar71xx-nand \
+	ar71xx-tiny \
 	brcm2708-bcm2708 \
 	brcm2708-bcm2709 \
+	brcm2708-bcm2710 \
+	ipq40xx \
+	ipq806x \
 	mpc85xx-generic \
+	mvebu-cortexa9 \
+	ramips-mt7620 \
 	ramips-mt7621 \
+	ramips-mt76x8 \
 	ramips-rt305x \
+	sunxi-cortexa7 \
 	x86-64 \
 	x86-generic \
-	x86-geode \
-	sunxi
+	x86-geode
 
 
 GLUON_RELEASE := $(shell git describe --tags 2>/dev/null)
@@ -33,6 +42,7 @@ JOBS ?= $(shell cat /proc/cpuinfo | grep processor | wc -l)
 GLUON_MAKE := ${MAKE} BROKEN=0 -j ${JOBS} -C ${GLUON_BUILD_DIR} \
 			GLUON_RELEASE=${GLUON_RELEASE} \
 			GLUON_BRANCH=${GLUON_BRANCH} \
+			GLUON_DEPRECATED=${GLUON_DEPRECATED}
 
 
 all: info

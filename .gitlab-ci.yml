@@ -1,0 +1,6 @@
+before_script:
+  - sudo apt-get update -qq && sudo apt-get install -y -qq build-essential gawk unzip libncurses-dev libz-dev libssl-dev wget git subversion python-pip python3-pip
+
+fullbuild:
+  script:
+    - make V=s FORCE_UNSAFE_CONFIGURE=1 GLUON_BRANCH=experimental GLUON_RELEASE=v2018.2.1 GLUON_GIT_REF=7d386a66f36c947f1c0770f64ab71f22cac1b21a
