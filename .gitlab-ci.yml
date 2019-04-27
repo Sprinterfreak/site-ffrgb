@@ -1,6 +1,5 @@
 before_script:
-  - sudo apt-get update -qq && sudo apt-get upgrade -y
-  - sudo apt-get install -y -qq build-essential gawk unzip libncurses-dev libz-dev libssl-dev wget git subversion python-pip python3-pip
+  - sudo apt-get update -qq && sudo apt-get install -y -qq build-essential gawk unzip libncurses-dev libz-dev libssl-dev wget git subversion python-pip python3-pip
 
 fullbuild:
   script:
