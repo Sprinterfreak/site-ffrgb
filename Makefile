@@ -6,22 +6,24 @@ SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
 GLUON_TARGETS ?= \
 	ar71xx-generic \
-	ar71xx-tiny \
+	ar71xx-mikrotik \
 	ar71xx-nand \
-	ipq40xx \
-	ipq806x \
+	ar71xx-tiny \
 	brcm2708-bcm2708 \
 	brcm2708-bcm2709 \
 	brcm2708-bcm2710 \
-	pc85xx-generic \
+	ipq40xx \
+	ipq806x \
+	mpc85xx-generic \
+	mvebu-cortexa9 \
 	ramips-mt7620 \
 	ramips-mt7621 \
 	ramips-mt76x8 \
 	ramips-rt305x \
+	sunxi-cortexa7 \
 	x86-64 \
 	x86-generic \
-	x86-geode \
-	sunxi-cortexa7
+	x86-geode
 
 
 GLUON_RELEASE := $(shell git describe --tags 2>/dev/null)
