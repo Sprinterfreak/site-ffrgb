@@ -1,0 +1,6 @@
+before_script:
+  - sudo apt-get update -qq && sudo apt-get install -y -qq build-essential gawk unzip libncurses-dev libz-dev libssl-dev wget git subversion python-pip python3-pip
+
+fullbuild:
+  script:
+    - make V=s FORCE_UNSAFE_CONFIGURE=1 GLUON_BRANCH=experimental GLUON_RELEASE=v2018.2.1 GLUON_GIT_REF=e81d1a390fdc958ba789ba69b449112ac6caca0d GLUON_TARGETS="ar71xx-generic ar71xx-nand ar71xx-tiny ipq806x"
