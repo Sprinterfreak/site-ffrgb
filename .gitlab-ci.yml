@@ -3,4 +3,4 @@ before_script:
 
 fullbuild:
   script:
-    - make V=s FORCE_UNSAFE_CONFIGURE=1 GLUON_BRANCH=experimental GLUON_RELEASE=v2018.2.1 GLUON_GIT_REF=ad1a1906ab2aa620417406cc8d112d7549b56640 GLUON_TARGETS="ar71xx-generic ar71xx-nand ipq40xx"
+    - make V=s FORCE_UNSAFE_CONFIGURE=1 GLUON_BRANCH=experimental GLUON_RELEASE=v2018.2.1 GLUON_GIT_REF=7f0299b53dab676dea77a83527f39dec329586e7 GLUON_TARGETS="ar71xx-generic ar71xx-nand ipq40xx x86-64"
